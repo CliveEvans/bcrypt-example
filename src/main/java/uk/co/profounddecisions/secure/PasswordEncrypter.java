@@ -16,8 +16,8 @@ public class PasswordEncrypter {
         return BCrypt.hashpw(password + pepper, salt);
     }
 
-    public boolean isValid(String candidate, String fromDB) {
-        return BCrypt.checkpw(candidate + pepper, fromDB);
+    public boolean isValid(String plaintextCandidate, String fromDB) {
+        return BCrypt.checkpw(plaintextCandidate + pepper, fromDB);
     }
 
 }
